@@ -1,0 +1,202 @@
+body,
+h1,
+h2,
+h3,
+p, 
+img,
+ul,
+li,
+a {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-decoration: none;
+  color: black;
+}
+a {transition: 0.5s;}
+body {
+  font-family: Calibri, sans-serif;
+  background-color: #E3E3E3;
+  font-size: 20px;
+}
+
+h2 {
+  text-align: center;
+  position: relative;
+  margin-bottom: 10px;
+}
+h2::after {
+  content: "";
+  position: absolute;
+  width: 90%;
+  bottom: -5px;
+  left: 0;
+  transform: translateX(5%);
+  border-bottom: 4px solid orange;
+}
+.fa {
+  margin-right: 5px;
+}
+
+/* Main content */
+.wrapper {
+  max-width: 1000px;
+  margin: 0.5rem auto;
+  border-radius: 0.3em;
+  overflow: hidden;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  grid-template-rows: repeat(1, 1fr);
+}
+.grid__photo   { grid-area: 1 / 1 / 2 / 2; }
+.grid__header  { grid-area: 1 / 2 / 2 / 3; }
+.grid__aside   { grid-area: 2 / 1 / 3 / 2; }
+.grid__article { grid-area: 2 / 2 / 3 / 3; }
+
+
+/* Top Photo and Header */
+.flex {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.grid__photo, .grid__header {
+  text-align: center;
+  background: orange;
+}
+
+.header__img {
+  min-width: 125px;
+  width: 90%;
+  max-width: 175px;
+  margin: 0.4em;
+  border-radius: 5px;
+}
+.header__name {
+  line-height: 0.9;
+}
+
+/* Left Asside and Right Article*/
+.grid__aside > *, .grid__article > * {
+  padding: 0 1em;
+  margin-bottom: 1.5em;
+}
+
+/* Left Aside */
+.grid__aside {
+  display: flex;
+  flex-direction: column;
+ justify-content: space-between;
+  background: lightgray;
+  text-align: center;
+}
+
+/* Left Aside Skills Hard */
+.skills__hard {
+  margin: 0 auto;
+  max-width: 250px;
+}
+.skills__hard div {
+  margin: 0.4em;
+  height: 64px;
+  width: 45px;
+  background: url(https://js.devexpress.com/Content/Images/features/html5-css-javascript-logos.png) no-repeat;
+  background-size: 160px;
+  border-radius: 5px;
+}
+.aside__skills .html-img {
+  background-position: 0px 0px;
+}
+.aside__skills .css-img {
+  background-position: -57px 0px;
+}
+.aside__skills .js-img {
+  background-position: -116px 0px;
+}
+.skills__hard img {
+  margin: 0.4em;
+  width: 64px;
+  height: 64px;
+  border-radius: 5px;
+}
+.skills__soft {
+  margin-top: 1em;
+}
+.skills__soft li, .aside__contacts li {
+  font-size: 1.3rem;
+}
+
+.aside__contacts li {
+  margin-bottom: 0.2em;
+}
+
+/* Right Article Experience */
+.article__exper .experience__list {
+  display: flex;
+  flex-direction: column;
+}
+.article__exper li, .article__educat li{
+  display: grid;
+  align-items: center;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  justify-content: center;
+  text-align: center;
+  
+  border-bottom: 3px solid lightgray;
+  
+  margin: 5px 0;
+  position: relative;
+}
+
+.grid__article a {
+  cursor: pointer;
+  color: #A26A3B;
+}
+a:hover {
+  text-decoration: underline;
+  color: #A26A3B;
+}
+.article__hobbie li {
+  display: inline-block;
+  margin: 5px;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  body {
+    font-size: initial;
+  }
+  .header__img {
+    width: 30%;
+  }
+  .header__name h1, .header__name h3 {
+    padding: 0 5px 5px;
+  }
+  .wrapper {
+    margin: 0;
+    border-radius: 0px;
+  }
+  .grid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+  }
+  .grid__photo   { order: 1; }
+  .grid__header  { order: 2; }
+  .grid__aside   { order: 4; }
+  .grid__article { order: 3; }
+  
+  /*
+  .grid__photo   { grid-area: 1 / 1 / 2 / 2; }
+  .grid__header  { grid-area: 2 / 1 / 3 / 2; }
+  .grid__aside   { grid-area: 4 / 1 / 5 / 2; }
+  .grid__article { grid-area: 3 / 1 / 4 / 2; }
+  */
+  
+}
